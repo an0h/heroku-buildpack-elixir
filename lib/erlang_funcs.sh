@@ -34,6 +34,8 @@ function install_erlang() {
 
   echo "right before tar $(erlang_cache_path)/$(erlang_tarball)"
 
+  echo "$tmp_path"
+
   tar zxf $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
 
   echo "the path $(erlang_cache_path)/$(erlang_tarball)"
