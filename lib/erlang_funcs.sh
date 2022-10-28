@@ -30,7 +30,11 @@ function install_erlang() {
 
   local tmp_path=$(mktemp -d)
 
+  print "right before tar"
+
   tar zxf $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
+
+  print "the path $(erlang_cache_path)/$(erlang_tarball)"
 
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
