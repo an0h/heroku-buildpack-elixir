@@ -21,7 +21,8 @@ fetch_elixir_versions() {
 }
 
 fetch_erlang_versions() {
-  "https://raw.githubusercontent.com/an0h/heroku-buildpack-elixir-otp-builds/master/otp-versions"
+  url="https://raw.githubusercontent.com/an0h/heroku-buildpack-elixir-otp-builds/master/otp-versions"
+  curl -s "$url"
 }
 
 exact_erlang_version_available() {
