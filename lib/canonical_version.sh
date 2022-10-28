@@ -12,7 +12,7 @@ erlang_builds_url() {
       erlang_builds_url="https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-14"
       ;;
   esac
-  echo $erlang_builds_url
+  echo "https://s3.amazonaws.com/heroku-buildpack-elixir/erlang/cedar-14"
 }
 
 fetch_elixir_versions() {
