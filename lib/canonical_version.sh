@@ -21,20 +21,7 @@ fetch_elixir_versions() {
 }
 
 fetch_erlang_versions() {
-  case "${STACK}" in
-    "heroku-20")
-      url="https://repo.hex.pm/builds/otp/ubuntu-20.04/builds.txt"
-      curl -s "$url" | awk '/^OTP-([0-9.]+ )/ {print substr($1,5)}'
-      ;;
-    "heroku-22")
-      url="https://repo.hex.pm/builds/otp/ubuntu-22.04/builds.txt"
-      curl -s "$url" | awk '/^OTP-([0-9.]+ )/ {print substr($1,5)}'
-      ;;
-    *)
-      url="https://raw.githubusercontent.com/an0h/heroku-buildpack-elixir-otp-builds/master/otp-versions"
-      curl -s "$url"
-      ;;
-  esac
+  "https://raw.githubusercontent.com/an0h/heroku-buildpack-elixir-otp-builds/master/otp-versions"
 }
 
 exact_erlang_version_available() {
