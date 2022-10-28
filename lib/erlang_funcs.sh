@@ -1,5 +1,5 @@
 function erlang_tarball() {
-  echo "OTP-${erlang_version}.tar.gz"
+  echo "OTP-24.0.0-bundle.tar.gz"
 }
 
 function download_erlang() {
