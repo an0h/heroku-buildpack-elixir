@@ -14,7 +14,9 @@ function download_erlang() {
     erlang_changed=true
 
     output_section "Fetching Erlang ${erlang_version} from ${erlang_package_url}"
-    curl -s ${erlang_package_url} -o $(erlang_cache_path)/$(erlang_tarball) 
+    curl --connect-timeout 100 -s ${erlang_package_url} -o $(erlang_cache_path)/$(erlang_tarball) || exit 1
+
+    head "$(erlang_cache_path)/$(erlang_tarball)"
   else
     output_section "Using cached Erlang ${erlang_version}"
   fi
