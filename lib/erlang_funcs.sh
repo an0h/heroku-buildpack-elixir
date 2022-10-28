@@ -14,9 +14,7 @@ function download_erlang() {
     erlang_changed=true
 
     output_section "Fetching Erlang ${erlang_version} from ${erlang_package_url}"
-    curl --connect-timeout 100 -s ${erlang_package_url} -o $(erlang_cache_path)/$(erlang_tarball) || exit 1
-
-    head "$(erlang_cache_path)/$(erlang_tarball)"
+    curl -s ${erlang_package_url} -o $(erlang_cache_path)/$(erlang_tarball) || exit 1
   else
     output_section "Using cached Erlang ${erlang_version}"
   fi
@@ -37,10 +35,11 @@ function install_erlang() {
   echo "right before tar $(erlang_cache_path)/$(erlang_tarball)"
 
   echo "$tmp_path"
+  echo "the path $(erlang_cache_path)/$(erlang_tarball)"
 
   tar zxfv $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
 
-  echo "the path $(erlang_cache_path)/$(erlang_tarball)"
+  echo "after tar zxfv"
 
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
