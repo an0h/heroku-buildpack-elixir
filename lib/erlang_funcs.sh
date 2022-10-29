@@ -34,6 +34,8 @@ function install_erlang() {
 
   tar zxf $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
 
+  ls -la "$tmp_path"
+
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
