@@ -41,7 +41,8 @@ function install_erlang() {
   ln -s ${tmp_path} $(runtime_erlang_path)
   # ${tmp_path}/ $(runtime_erlang_path)
   cd ${tmp_path}
-  ./configure
+  pwd
+  configure
   make
   make install
 
