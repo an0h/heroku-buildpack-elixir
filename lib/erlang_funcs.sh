@@ -39,8 +39,9 @@ function install_erlang() {
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
-  ${tmp_path}/configure $(runtime_erlang_path)
+  # ${tmp_path}/ $(runtime_erlang_path)
   cd ${tmp_path}
+  ./configure
   make
   make install
 
