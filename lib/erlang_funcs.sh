@@ -40,7 +40,6 @@ function install_erlang() {
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
   # ${tmp_path}/ $(runtime_erlang_path)
-  ${tmp_path}/configure
   ${tmp_path}/make
   ${tmp_path}/make install
 
