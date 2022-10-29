@@ -34,7 +34,7 @@ function install_erlang() {
 
   tar zxf $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
 
-  ls -la "$tmp_path"
+  ls -la "$tmp_path/make/"
 
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
