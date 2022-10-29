@@ -1,10 +1,10 @@
 function erlang_tarball() {
-  echo "OTP-24.0.0-bundle.tar.gz"
+  echo "OTP-24.0.tar.gz"
 }
 
 function download_erlang() {
   mkdir -p $(erlang_cache_path)
-  erlang_package_url="https://github.com/erlang/otp/releases/download/OTP-24.0/OTP-24.0.0-bundle.tar.gz"
+  erlang_package_url="https://github.com/erlang/otp/archive/refs/tags/OTP-24.0.tar.gz"
 
   # If a previous download does not exist, then always re-download
   if [ ! -f $(erlang_cache_path)/$(erlang_tarball) ]; then
