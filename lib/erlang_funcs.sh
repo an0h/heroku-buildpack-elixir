@@ -36,6 +36,8 @@ function install_erlang() {
 
   ls -la "$tmp_path/"
 
+  echo "$(runtime_erlang_path) erlangpath"
+
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
