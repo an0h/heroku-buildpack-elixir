@@ -39,7 +39,10 @@ function install_erlang() {
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
-  ${tmp_path}/Install -minimal $(runtime_erlang_path)
+  ${tmp_path}/configure $(runtime_erlang_path)
+  cd ${tmp_path}
+  make
+  make install
 
   # remove symlink so we can copy into the BUILD_DIR without symlinks
   rm $(runtime_erlang_path)
