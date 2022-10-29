@@ -40,7 +40,7 @@ function install_erlang() {
   mkdir -p $(runtime_platform_tools_path)
   ln -s ${tmp_path} $(runtime_erlang_path)
   # ${tmp_path}/ $(runtime_erlang_path)
-  ${tmp_path}/make
+  ${tmp_path}/make/configure.in
   ${tmp_path}/make install
 
   # remove symlink so we can copy into the BUILD_DIR without symlinks
