@@ -14,7 +14,7 @@ function download_erlang() {
     erlang_changed=true
 
     output_section "Fetching Erlang ${erlang_version} from ${erlang_package_url}"
-    wget ${erlang_package_url} -P $(erlang_cache_path)/$(erlang_tarball)
+    wget ${erlang_package_url} -P $(erlang_cache_path)
   else
     output_section "Using cached Erlang ${erlang_version}"
   fi
