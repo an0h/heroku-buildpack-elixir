@@ -32,15 +32,7 @@ function install_erlang() {
 
   ls -la "/tmp/codon/tmp/cache/heroku-buildpack-elixir/stack-cache/erlang/"
 
-  echo "right before tar $(erlang_cache_path)/$(erlang_tarball)"
-
-  echo "$tmp_path"
-  echo "the path $(erlang_cache_path)/$(erlang_tarball)"
-  head $(erlang_cache_path)/$(erlang_tarball)
-
   tar zxf $(erlang_cache_path)/$(erlang_tarball) -C "${tmp_path}" --strip-components=1
-
-  echo "after tar zxfv"
 
   rm -rf $(runtime_erlang_path)
   mkdir -p $(runtime_platform_tools_path)
